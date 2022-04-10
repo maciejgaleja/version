@@ -10,6 +10,8 @@ jobs:
         python-version: ["3.8"]
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
@@ -27,4 +29,3 @@ jobs:
     - name: Testing on examples
       run: |
         python3 ./version.py
-        git log
