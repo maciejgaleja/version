@@ -26,4 +26,4 @@ jobs:
         python3 -m yapf -d $(git ls-files '*.py')
     - name: Testing on examples
       run: |
-        cd examples; python3 ../avangard/avangard.py
+        python3 ./version.py
