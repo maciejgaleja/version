@@ -27,3 +27,4 @@ jobs:
     - name: Testing on examples
       run: |
         python3 ./version.py
+        git log
