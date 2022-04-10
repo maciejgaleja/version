@@ -58,14 +58,14 @@ def read_from_git(repo_path: str = "."):
 
 def _analyze_commit(commit_log, version):
     is_merge = False
-    version_code = []
+    version_commands = []
     for line in commit_log:
         if line.startswith("Merge: "):
             is_merge = True
         if line.startswith("    version."):
-            version_code.append(line.strip())
-    if len(version_code) > 0:
-        for command in version_code:
+            version_commands.append(line.strip())
+    if len(version_commands) > 0:
+        for command in version_commands:
             if command == "version.patch++":
                 version.patch.increment()
             if command == "version.minor++":
