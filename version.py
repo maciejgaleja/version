@@ -4,6 +4,7 @@ import subprocess
 
 
 class VersionComponent:
+
     def __init__(self, next_component=None) -> None:
         self.number = 0
         self._next = next_component
@@ -21,6 +22,7 @@ class VersionComponent:
 
 
 class SemVersion:
+
     def __init__(self):
         self.patch = VersionComponent()
         self.minor = VersionComponent(self.patch)
